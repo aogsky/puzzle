@@ -34,7 +34,7 @@ func main(){
 		index = list.change(actArr, index)
 
 		if ( list[8] == 0 ) {
-			data.status = list.check(data)
+			data.status = list.check()
 		}
 	}
 	clear()
@@ -42,9 +42,9 @@ func main(){
 	fmt.Printf("Congratulation! Good job!!!\n")
 }
 
-func (l *List)check(data GameData) bool {
-	for i, v := range l {
-		if (l[i] != v) {
+func (l *List)check() bool {
+	for i := range l {
+		if (( i < 8 )  && ( l[i] != i+1 )) {
 			return false
 		}
 	}
